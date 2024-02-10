@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/msdos.css">
+    <title>Challenge - Encriptador JS (version MS-DOS)</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <div class="overlay"></div>
+
+        <nav class="nav">
+            <ul>
+                <li class="dropdown" id="menu-archivo">
+                    <span onclick="toggleMenuArchivo(false);">Archivo</span>
+                    <div class="dropdown-content" id="archivo-content">
+                        <ul>
+                            <li><a onclick="condicionInicial();"><span class="text-red">N</span>uevo</a></li>
+                            <li><a onclick="salir();"><span class="text-red">S</span>alir</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="dropdown" id="menu-ventana">
+                    <span onclick="toggleMenuVer();">Ver</span>
+                    <div class="dropdown-content" id="ventana-content">
+                        <ul>
+                            <li>
+                                <label class="simil-checkbox" onclick="toggleMostrarVentana('ventana-1','checkbox-1')">
+                                    <a href=" javascript:void(0);">Ventana 1</a>
+                                    <span id="checkbox-1" class="activated"></span>
+                                </label>
+                            </li>
+                            <li>
+                                <label class="simil-checkbox" onclick="toggleMostrarVentana('ventana-2','checkbox-2')">
+                                    <a href=" javascript:void(0);">Ventana 2</a>
+                                    <span id="checkbox-2" class="activated"></span>
+                                </label>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <span class="reloj" id="reloj"></span>
+            </ul>
+        </nav>
+
+        <main class="main">
+
+            <div class="window full-width no-shadow" id="ventana-1">
+                <fieldset class="fieldset">
+                    <legend>Ingrese el texto</legend>
+                    <span class="fieldset-button" onclick="toggleMostrarVentana('ventana-1','checkbox-1');"><span
+                            class="text-green">■</span></span>
+                    <textarea class="textarea full-width" id="inputText"></textarea>
+                    <span class="fieldset-text" style="margin-left: 50px;" id="posicion">&nbsp;1:1&nbsp;</span>
+
+                </fieldset>
+
+                <div class="botones-accion">
+                    <button class="btn" value="Encriptar" onclick="procesar('encriptar');">Encriptar</button>
+                    <button class="btn" value="Desencriptar" onclick="procesar('desencriptar');">Desencriptar</button>
+                </div>
+            </div>
+
+
+            <div class="window full-width no-shadow" id="ventana-2">
+
+                <fieldset class="fieldset">
+                    <legend> Mensaje procesado </legend>
+                    <span class="fieldset-button" onclick="toggleMostrarVentana('ventana-2','checkbox-2');"><span
+                            class="text-green">■</span></span>
+                    <textarea class="textarea full-width" id="outputText" readonly></textarea>
+                </fieldset>
+
+                <div class="boton-copiar">
+                    <button class="btn" onclick="copiar();" id="botonCopiar" disabled>Copiar</button>
+                </div>
+
+            </div>
+
+        </main>
+
+        <footer class="footer">
+            <div class="center">
+                &copy; 2024
+                <br> Desarrollado por Sanchez W@lter
+            </div>
+        </footer>
+
+        <div class="modal" id="modal">
+            <div class="modal__window">
+                <fieldset class="modal__text__content center">
+
+
+                    <div id="informacion" class="modal-informacion"></div>
+
+
+                    <button onclick="cerrarModal(event);" id="botonCerrarModal" class="btn">Aceptar</button>
+                </fieldset>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="assets/msdos.js"></script>
+
+</body>
+
+</html>

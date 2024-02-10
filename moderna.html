@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/moderna.css">
+    <title>Challenge - Encriptador JS (version Moderna)</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <header class="header">
+            <span onclick="salir();" class="volver"></span>
+            <h1>Challenge Alura 2024</h1>
+
+        </header>
+
+        <main class="main">
+
+            <section class="card">
+
+                <div class="card__body">
+                    <div class="card__body-mensaje">
+                        <textarea class="textarea" id="inputText" placeholder="Ingrese el texto"></textarea>
+                    </div>
+                </div>
+                <div class="card__footer">
+                    <button class="btn" value="Encriptar" onclick="procesar('encriptar');">Encriptar</button>
+                    <button class="btn" value="Desencriptar" onclick="procesar('desencriptar');">Desencriptar</button>
+                </div>
+
+
+            </section>
+
+
+            <section class="card">
+
+                <div class="card__body" id="flip-card">
+
+                    <div class="card__body-imagen">
+                        <img class="img" src="./assets/img/mensaje-no-encontrado.png"
+                            alt="Imagen de mensaje no encontrado">
+                    </div>
+
+                    <div class="card__body-mensaje">
+                        <textarea class="textarea" id="outputText" readonly>resultado</textarea>
+                    </div>
+
+                </div>
+
+                <div class="card__footer">
+                    <button class="btn" onclick="copiar();" id="botonCopiar" disabled>Copiar</button>
+                </div>
+
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-copyright">
+                &copy; 2024 - Desarrollado por Sanchez W@lter
+            </div>
+        </footer>
+
+        <dialog id="modal">
+            <p id="modal-info"></p>
+            <button id="modal-cerrar" onclick="cerrarModal()" class="btn">Cerrar</button>
+        </dialog>
+
+
+    </div>
+
+
+    <script src="assets/moderna.js"></script>
+
+</body>
+
+</html>

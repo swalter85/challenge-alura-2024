@@ -1,0 +1,152 @@
+* {
+  min-width: 0;
+  font: inherit;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: #000000;
+}
+
+.lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  margin: auto;
+  width: 90vw;
+  z-index: -999;
+}
+
+.line {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  top: 0;
+  left: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.lines .line::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 15vh;
+  width: 100%;
+  top: -50%;
+  left: 0;
+  background: gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgba(255, 255, 255, 0)),
+    color-stop(75%, #ffffff),
+    to(#ffffff)
+  );
+
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 75%,
+    #ffffff 100%
+  );
+  -webkit-animation: run 7s 0s infinite;
+  animation: run 7s 0s infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+  animation-timing-function: cubic-bezier(0.4, 0.26, 0, 0.97);
+}
+
+.lines .line:nth-child(1) {
+  margin-left: -40%;
+}
+
+.lines .line:nth-child(1)::after {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.lines .line:nth-child(3) {
+  margin-left: 40%;
+}
+
+.lines .line:nth-child(3)::after {
+  -webkit-animation-delay: 3s;
+  animation-delay: 3s;
+}
+
+@-webkit-keyframes run {
+  from {
+    top: -50%;
+  }
+
+  to {
+    top: 110%;
+  }
+}
+
+@keyframes run {
+  from {
+    top: -50%;
+  }
+
+  to {
+    top: 110%;
+  }
+}
+
+h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+p {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100dvh;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 100%;
+  max-width: 300px;
+  margin: 10px;
+  text-align: center;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 80px 0;
+  padding: 20px 20px;
+}
+
+@media screen and (min-width: 1024px) {
+  .lines .line:nth-child(1) {
+    margin-left: -25%;
+  }
+  .lines .line:nth-child(3) {
+    margin-left: 25%;
+  }
+}
