@@ -144,5 +144,5 @@ function cerrarModal() {
 }
 
 function salir() {
-    window.location = '../index.html';
+    window.location = 'index.html';
 }
